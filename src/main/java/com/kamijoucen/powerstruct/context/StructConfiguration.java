@@ -1,4 +1,4 @@
-package com.kamijoucen.powerstruct.config;
+package com.kamijoucen.powerstruct.context;
 
 public interface StructConfiguration {
 
