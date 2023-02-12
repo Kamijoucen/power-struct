@@ -1,11 +1,12 @@
 package com.kamijoucen.powerstruct.executor;
 
 import com.kamijoucen.powerstruct.interceptor.Exe;
+import com.kamijoucen.powerstruct.interceptor.ExeInterceptor;
 
 public interface BaseExecutor {
 
     <R> R execute(Exe<R> exe);
 
-    void addExeInterceptor();
+    void addExeInterceptor(ExeInterceptor interceptor);
 
 }

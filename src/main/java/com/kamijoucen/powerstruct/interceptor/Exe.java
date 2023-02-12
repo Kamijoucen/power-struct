@@ -1,10 +1,10 @@
 package com.kamijoucen.powerstruct.interceptor;
 
 
-import com.kamijoucen.powerstruct.context.StructContext;
+import com.kamijoucen.powerstruct.context.ExeContext;
 
 public interface Exe<R> {
 
-    R execute(StructContext context);
+    R execute(ExeContext context);
 
 }
