@@ -1,16 +1,11 @@
 package com.kamijoucen.powerstruct.interceptor;
 
-import com.kamijoucen.powerstruct.context.ContextUtil;
-import com.kamijoucen.powerstruct.context.ExeContext;
-
-import java.util.Objects;
+import com.kamijoucen.powerstruct.exe.Exe;
 
 public class ExeInvoker extends AbstractExeInterceptor {
 
     @Override
     public <R> R execute(Exe<R> exe) {
-        ExeContext context = ContextUtil.getStructContext();
-        Objects.requireNonNull(context);
-        return exe.execute(context);
+        return exe.execute();
     }
 }

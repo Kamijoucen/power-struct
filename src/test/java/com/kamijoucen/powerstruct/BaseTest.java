@@ -25,7 +25,7 @@ public class BaseTest {
     @BeforeEach
     public void initExecutor() {
         baseExecutor = new DefaultExecutorImpl();
-        baseExecutor.addExeInterceptor(new ExeContextInterceptor(configuration.getExeContextFactory()));
+        baseExecutor.addExeInterceptor(new ExeContextInterceptor(configuration));
         baseExecutor.addExeInterceptor(new ExeInvoker());
     }
 

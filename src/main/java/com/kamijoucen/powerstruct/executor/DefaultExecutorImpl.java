@@ -1,6 +1,6 @@
 package com.kamijoucen.powerstruct.executor;
 
-import com.kamijoucen.powerstruct.interceptor.Exe;
+import com.kamijoucen.powerstruct.exe.Exe;
 import com.kamijoucen.powerstruct.interceptor.ExeInterceptor;
 
 import java.util.Objects;
@@ -17,6 +17,9 @@ public class DefaultExecutorImpl implements BaseExecutor {
 
     @Override
     public void addExeInterceptor(ExeInterceptor interceptor) {
-        // todo
+        if (first != null) {
+            interceptor.setNext(first);
+        }
+        first = interceptor;
     }
 }
