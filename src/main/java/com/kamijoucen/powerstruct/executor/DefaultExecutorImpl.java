@@ -5,7 +5,7 @@ import com.kamijoucen.powerstruct.interceptor.ExeInterceptor;
 
 import java.util.Objects;
 
-public class DefaultExecutorImpl implements BaseExecutor {
+public class DefaultExecutorImpl implements ExeExecutor {
 
     private ExeInterceptor first;
 
