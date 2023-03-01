@@ -9,8 +9,8 @@ public abstract class AbstractExe<R> implements Exe<R> {
     protected ExeContext context;
 
 
-    public AbstractExe(ExeContext context) {
-        this.parentContext = context;
+    public AbstractExe(ExeContext parrentContext) {
+        this.parentContext = parrentContext;
     }
 
     @Override

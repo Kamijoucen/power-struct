@@ -13,13 +13,14 @@ import org.junit.jupiter.api.Test;
 
 public class BaseTest {
 
-    private StructConfiguration configuration;
+    private StructConfigurationImpl configuration;
 
     private BaseExecutor baseExecutor;
 
     @BeforeEach
     public void initConfig() {
         configuration = new StructConfigurationImpl();
+        configuration.init();
     }
 
     @BeforeEach
@@ -33,6 +34,7 @@ public class BaseTest {
     public void test1() {
         DemoExe exe = new DemoExe("test1");
         String r = baseExecutor.execute(exe);
+        System.out.println(exe.getContext());
         System.out.println(r);
     }
 

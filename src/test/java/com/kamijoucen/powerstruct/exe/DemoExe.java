@@ -16,8 +16,4 @@ public class DemoExe extends AbstractExe<String> {
         return "hello world";
     }
 
-    @Override
-    public ExeContext getContext() {
-        return null;
-    }
 }

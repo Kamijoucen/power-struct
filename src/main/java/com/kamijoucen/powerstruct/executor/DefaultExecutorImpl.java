@@ -17,9 +17,14 @@ public class DefaultExecutorImpl implements BaseExecutor {
 
     @Override
     public void addExeInterceptor(ExeInterceptor interceptor) {
-        if (first != null) {
-            interceptor.setNext(first);
+        if (first == null) {
+            first = interceptor;
+            return;
         }
-        first = interceptor;
+        ExeInterceptor last = first;
+        while (last.getNext() != null) {
+            last = last.getNext();
+        }
+        last.setNext(interceptor);
     }
 }
