@@ -8,6 +8,8 @@ public class ExeContextImpl implements ExeContext {
 
     private final ExeContext parentContext;
 
+    private GlobalContext globalContext;
+
     public ExeContextImpl(Exe<?> exe, ExeContext context) {
         this.exe = exe;
         this.parentContext = context;
@@ -21,5 +23,19 @@ public class ExeContextImpl implements ExeContext {
     @Override
     public Exe<?> getExe() {
         return exe;
+    }
+
+    @Override
+    public GlobalContext getGlobalContext() {
+        return globalContext;
+    }
+
+    @Override
+    public StructConfiguration getConfiguration() {
+        return null;
+    }
+
+    public void setGlobalContext(GlobalContext globalContext) {
+        this.globalContext = globalContext;
     }
 }

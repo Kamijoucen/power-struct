@@ -16,6 +16,7 @@ public class ExeContextInterceptor extends AbstractExeInterceptor {
     public <R> R execute(Exe<R> exe) {
         ExeContext context = configuration.getExeContextFactory().getExeContext(exe, exe.getParentContext());
         exe.setContext(context);
+        exe.setConfiguration(configuration);
         return this.getNext().execute(exe);
     }
 }

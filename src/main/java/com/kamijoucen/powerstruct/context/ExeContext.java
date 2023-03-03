@@ -8,4 +8,8 @@ public interface ExeContext {
 
     Exe<?> getExe();
 
+    GlobalContext getGlobalContext();
+
+    StructConfiguration getConfiguration();
+
 }
