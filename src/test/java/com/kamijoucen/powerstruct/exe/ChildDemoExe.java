@@ -12,6 +12,8 @@ public class ChildDemoExe extends AbstractExe<String> {
 
     @Override
     public String execute(RuntimeContext context) {
+        // print trace
+        System.out.println("trace: " + context.getTrace());
         return "child: " + string;
     }
 

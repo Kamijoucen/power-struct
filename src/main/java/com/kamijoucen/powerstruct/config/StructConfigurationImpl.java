@@ -3,6 +3,7 @@ package com.kamijoucen.powerstruct.config;
 import com.kamijoucen.powerstruct.executor.DefaultExecutorImpl;
 import com.kamijoucen.powerstruct.executor.ExeExecutor;
 import com.kamijoucen.powerstruct.interceptor.ExeInvoker;
+import com.kamijoucen.powerstruct.interceptor.TraceInterceptor;
 
 public class StructConfigurationImpl implements StructConfiguration {
 
@@ -14,6 +15,7 @@ public class StructConfigurationImpl implements StructConfiguration {
 
     public void initExecutor() {
         this.executor = new DefaultExecutorImpl();
+        this.executor.addExeInterceptor(new TraceInterceptor());
         this.executor.addExeInterceptor(new ExeInvoker());
     }
 
