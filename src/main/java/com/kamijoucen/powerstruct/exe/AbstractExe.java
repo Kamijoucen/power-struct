@@ -1,54 +1,20 @@
 package com.kamijoucen.powerstruct.exe;
 
-import com.kamijoucen.powerstruct.context.ExeContext;
-import com.kamijoucen.powerstruct.context.StructConfiguration;
-import com.kamijoucen.powerstruct.executor.ExeExecutor;
-
 public abstract class AbstractExe<R> implements Exe<R> {
 
-    protected StructConfiguration configuration;
+    private final String name;
 
-    protected ExeContext parentContext;
-
-    protected ExeContext context;
-
-    public AbstractExe(ExeContext parrentContext) {
-        this.parentContext = parrentContext;
+    public AbstractExe(String name) {
+        this.name = name;
     }
 
-    public AbstractExe(Exe<?> parrentExe) {
-        this.parentContext = parrentExe.getContext();
-    }
-
-
-    @Override
-    public ExeContext getParentContext() {
-        return parentContext;
+    public AbstractExe() {
+        this.name = this.getClass().getSimpleName();
     }
 
     @Override
-    public ExeContext getContext() {
-        return context;
+    public String getName() {
+        return name;
     }
-
-    @Override
-    public void setContext(ExeContext context) {
-        this.context = context;
-    }
-
-    @Override
-    public StructConfiguration getConfiguration() {
-        return configuration;
-    }
-
-    @Override
-    public void setConfiguration(StructConfiguration configuration) {
-        this.configuration = configuration;
-    }
-
-    public ExeExecutor getExecutor() {
-        return configuration.getExecutor();
-    }
-
 
 }

@@ -1,18 +1,17 @@
 package com.kamijoucen.powerstruct.exe;
 
-import com.kamijoucen.powerstruct.context.ExeContext;
+import com.kamijoucen.powerstruct.context.RuntimeContext;
 
 public class ChildDemoExe extends AbstractExe<String> {
 
     private final String string;
 
-    public ChildDemoExe(String string, Exe<?> exe) {
-        super(exe);
+    public ChildDemoExe(String string) {
         this.string = string;
     }
 
     @Override
-    public String execute() {
+    public String execute(RuntimeContext context) {
         return "child: " + string;
     }
 

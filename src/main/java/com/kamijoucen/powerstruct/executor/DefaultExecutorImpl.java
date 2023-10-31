@@ -1,5 +1,6 @@
 package com.kamijoucen.powerstruct.executor;
 
+import com.kamijoucen.powerstruct.context.RuntimeContext;
 import com.kamijoucen.powerstruct.exe.Exe;
 import com.kamijoucen.powerstruct.interceptor.ExeInterceptor;
 
@@ -10,9 +11,10 @@ public class DefaultExecutorImpl implements ExeExecutor {
     private ExeInterceptor first;
 
     @Override
-    public <R> R execute(Exe<R> exe) {
+    public <R> R execute(Exe<R> exe, RuntimeContext context) {
         Objects.requireNonNull(exe);
-        return first.execute(exe);
+        Objects.requireNonNull(context);
+        return first.execute(exe, context);
     }
 
     @Override

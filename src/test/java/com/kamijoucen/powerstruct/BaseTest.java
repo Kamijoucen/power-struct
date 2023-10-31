@@ -1,6 +1,8 @@
 package com.kamijoucen.powerstruct;
 
-import com.kamijoucen.powerstruct.context.StructConfigurationImpl;
+import com.kamijoucen.powerstruct.config.StructConfigurationImpl;
+import com.kamijoucen.powerstruct.context.RuntimeContext;
+import com.kamijoucen.powerstruct.context.RuntimeContextImpl;
 import com.kamijoucen.powerstruct.exe.DemoExe;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,9 +20,11 @@ public class BaseTest {
 
     @Test
     public void test1() {
-        DemoExe exe = new DemoExe("test1");
-        String r = configuration.getExecutor().execute(exe);
-        System.out.println(exe.getContext());
+        
+        RuntimeContext context = new RuntimeContextImpl(configuration);
+        
+        DemoExe exe = new DemoExe();
+        String r = configuration.getExecutor().execute(exe, context);
         System.out.println(r);
     }
 

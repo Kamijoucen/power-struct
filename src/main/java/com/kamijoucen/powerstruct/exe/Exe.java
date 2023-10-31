@@ -1,21 +1,11 @@
 package com.kamijoucen.powerstruct.exe;
 
-
-import com.kamijoucen.powerstruct.context.ExeContext;
-import com.kamijoucen.powerstruct.context.StructConfiguration;
+import com.kamijoucen.powerstruct.context.RuntimeContext;
 
 public interface Exe<R> {
 
-    R execute();
+    String getName();
 
-    ExeContext getParentContext();
-
-    ExeContext getContext();
-
-    void setContext(ExeContext context);
-
-    StructConfiguration getConfiguration();
-
-    void setConfiguration(StructConfiguration configuration);
+    R execute(RuntimeContext context);
 
 }
