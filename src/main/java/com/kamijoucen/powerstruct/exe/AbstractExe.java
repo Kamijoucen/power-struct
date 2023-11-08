@@ -12,7 +12,6 @@ public abstract class AbstractExe<R> implements Exe<R> {
         this.name = this.getClass().getSimpleName();
     }
 
-    @Override
     public String getName() {
         return name;
     }
